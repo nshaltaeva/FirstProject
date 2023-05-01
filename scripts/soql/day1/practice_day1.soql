@@ -1,0 +1,53 @@
+//SELECT Name, AnnualRevenue
+//  FROM Account
+//  WHERE (Name != 'Dickenson plc' AND Name != 'Edge Communications') 
+//  AND AnnualRevenue != null
+
+// Get All Account Name , AnnualRevenue field
+// if the Name is in
+// Dickenson plc 
+// Edge Communications
+// United Oil & Gas Corp.
+
+//SELECT Name, AnnualRevenue FROM Account
+//WHERE Name = 'Dickenson plc'
+//or Name = 'Edge Communications'
+//or Name = 'United Oil & Gas Corp.'
+
+//SELECT Name, AnnualRevenue
+//FROM Account
+//WHERE Name IN ('Dickenson plc',
+//               'Edge Communications',
+//               'United Oil & Gas Corp.',
+//               'bla bla')
+
+// Get all opportunity Name, Amount, StageName
+// if the StageName is IN Closed Won or Closed Lost status
+//SELECT Name, Amount, StageName FROM Opportunity
+//WHERE StageName NOT IN ('Closed Won', 'Closed Lost')
+
+// Get All Account Name field
+// if the Name is not  
+// Dickenson plc 
+// Edge Communications
+// AnnualRevenue is not null 
+
+ //SELECT Name, AnnualRevenue
+ // FROM Account
+ // WHERE Name NOT IN ('Dickenson plc','Edge Communications')
+ //       AND AnnualRevenue != null
+
+
+  //SELECT FirstName, LastName
+  //FROM Contact
+  //ORDER BY FirstName DESC NULLS LAST
+
+  //Write a SOQL SELECT statement to retrieve the Name,AnnualRevenue and Industry fields for all Account records 
+  // - where the Industry is Finance.
+  // - sort the result by AnnualRevenue descending
+  // - Limit the result to 2 
+
+  SELECT Name, AnnualRevenue FROM Account
+  WHERE Industry = 'Finance'
+  ORDER by AnnualRevenue DESC Limit 2
+
